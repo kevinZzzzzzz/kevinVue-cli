@@ -1,30 +1,20 @@
 // 这里使用的是样例的配置，可根据需要自定义
 module.exports = {
   types: [
-    { value: 'feat', name: 'feat:     A new feature' },
-    { value: 'fix', name: 'fix:      A bug fix' },
-    { value: 'docs', name: 'docs:     Documentation only changes' },
-    {
-      value: 'style',
-      name:
-        'style:    Changes that do not affect the meaning of the code\n            (white-space, formatting, missing semi-colons, etc)',
-    },
+    { value: 'feat', name: 'feat:   新功能' },
+    { value: 'fix', name: 'fix:   修复' },
+    { value: 'docs', name: 'docs:   文档变更' },
+    { value: 'style', name: 'style:   代码格式(不影响代码运行的变动)' },
     {
       value: 'refactor',
-      name: 'refactor: A code change that neither fixes a bug nor adds a feature',
+      name: 'refactor:重构(既不是增加feature)，也不是修复bug'
     },
-    {
-      value: 'perf',
-      name: 'perf:     A code change that improves performance',
-    },
-    { value: 'test', name: 'test:     Adding missing tests' },
-    {
-      value: 'chore',
-      name:
-        'chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation',
-    },
-    { value: 'revert', name: 'revert:   Revert to a commit' },
-    { value: 'WIP', name: 'WIP:      Work in progress' },
+    { value: 'perf', name: 'perf:   性能优化' },
+    { value: 'test', name: 'test:   增加测试' },
+    { value: 'chore', name: 'chore:   构建过程或辅助功能的变动' },
+    { value: 'revert', name: 'revert:   回退' },
+    { value: 'build', name: 'build:   打包' },
+    { value: 'revert', name: 'revert:   回退' }
   ],
 
   scopes: [{ name: 'accounts' }, { name: 'admin' }, { name: 'exampleScope' }, { name: 'changeMe' }],
@@ -46,24 +36,24 @@ module.exports = {
   },
   */
   // override the messages, defaults are as follows
+  //消息步骤
   messages: {
-    type: "Select the type of change that you're committing:",
-    scope: '\nDenote the SCOPE of this change (optional):',
-    // used if allowCustomScopes is true
-    customScope: 'Denote the SCOPE of this change:',
-    subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
-    body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
-    breaking: 'List any BREAKING CHANGES (optional):\n',
-    footer: 'List any ISSUES CLOSED by this change (optional). E.g.: #31, #34:\n',
-    confirmCommit: 'Are you sure you want to proceed with the commit above?',
+    type: '请选择提交类型',
+    scope: '表示此更改的范围(可选)',
+    customScope: '请输入修改范围(可选)',
+    subject: '请简要描述提交(必填)',
+    breaking: '列出任何重大更改(可选)',
+    body: '请输入详细描述(可选)',
+    footer: '请输入要关闭的issue(可选)',
+    confirmCommit: '确认以上信息提交?(y/n)'
   },
 
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
   // skip any questions you want
-  skipQuestions: ['body'],
+  skipQuestions: ['body', 'footer','scope', 'breaking', 'customScope'],
 
-  // limit subject length
+  // subject文字长度默认是
   subjectLimit: 100,
   // breaklineChar: '|', // It is supported for fields body and footer.
   // footerPrefix : 'ISSUES CLOSED:'
