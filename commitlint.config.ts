@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // 继承的规则
   extends: ["@commitlint/config-conventional", "cz"],
   // 定义规则类型
