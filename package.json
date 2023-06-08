@@ -19,8 +19,8 @@
     "vue-router": "^4.1.6"
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts}": [
-      "eslint src"
+    "packages/**/*.{js,jsx,ts,tsx,json,css,scss,md,vue}": [
+      "eslint --fix --max-warnings=0"
     ]
   },
   "devDependencies": {
