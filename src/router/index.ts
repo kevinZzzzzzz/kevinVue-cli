@@ -7,7 +7,7 @@
  * @Description: 路由配置
  * @FilePath: \vue-ts-vite\src\router\index.ts
  */
-import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {

@@ -8,7 +8,7 @@
  * @FilePath: \vue-ts-vite\src\Api\index.ts
  */
 import http from '@/Http'
-import { type AxiosResponse } from 'axios'
+import { AxiosResponse } from 'axios'
 // 设置代理
 const setProxy = (url: string): string => {
   return !import.meta.env.PROD ? '/api' + url : url
